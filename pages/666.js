@@ -54,7 +54,7 @@ const SixSixSix = ({ data }) => {
                   <Photo
                     key={key}
                     photo={photo}
-                    aspect="landscape"
+                    aspect="square"
                     width={1200}
                     className="carousel--photo"
                   />
@@ -155,7 +155,7 @@ const SixSixSix = ({ data }) => {
               <CursorFollow
                 cursorContent={
                   <span>
-                    <Icon name="666" viewBox="0 0 666 666" />
+                    <Icon name="Cursor" viewBox="0 0 27 27" />
                   </span>
                 }
               >

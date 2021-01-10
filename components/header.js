@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer'
 
 import Navigation from './navigation'
 import Icon from './icon'
+import CursorFollow from './cursor-follow'
 
 import {
   useStore,
@@ -40,7 +41,7 @@ const Header = ({ menu, transparent }) => {
             <div className="logo">
               <Link href="/" scroll={false}>
                 <a className="logo--link" aria-label="Go Home">
-                  <Icon name="Logo" viewBox="0 0 666 666" />
+                  <Icon name="Logo" />
                 </a>
               </Link>
             </div>
@@ -52,17 +53,25 @@ const Header = ({ menu, transparent }) => {
               </span>
             </button>
 
-            <nav className="main-navigation" role="navigation">
-              <button
-                onClick={() => toggleMenu(!isMenuOpen)}
-                className={`menu-toggle${isMenuOpen ? ' is-open' : ''}`}
-                aria-expanded={isMenuOpen ? 'true' : 'false'}
-                aria-label="Toggle Menu"
-              >
-                <span></span>
-              </button>
-              {menu.items && <Navigation menu={menu} />}
-            </nav>
+            <CursorFollow
+              cursorContent={
+                <span>
+                  <Icon name="Cursor" viewBox="0 0 27 27" />
+                </span>
+              }
+            >
+              <nav className="main-navigation" role="navigation">
+                <button
+                  onClick={() => toggleMenu(!isMenuOpen)}
+                  className={`menu-toggle${isMenuOpen ? ' is-open' : ''}`}
+                  aria-expanded={isMenuOpen ? 'true' : 'false'}
+                  aria-label="Toggle Menu"
+                >
+                  <span></span>
+                </button>
+                {menu.items && <Navigation menu={menu} />}
+              </nav>
+            </CursorFollow>
           </div>
         </div>
       </header>

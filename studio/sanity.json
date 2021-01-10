@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "HULL"
+    "name": "Next Sanity Shopify"
   },
   "plugins": [
     "@sanity/base",
@@ -21,9 +21,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [

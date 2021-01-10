@@ -1,10 +1,10 @@
 .form {
   @apply relative;
-  
+
   &--error {
     /* Error Message styles */
   }
-  
+
   &--success {
     /* Success Message styles */
   }
@@ -45,7 +45,7 @@
 
       svg {
         @apply block flex-none w-6 h-6 mr-4 p-1 pointer-events-none border border-current transition-colors;
-        transition-delay: .15s;
+        transition-delay: 0.15s;
 
         input:checked + & {
           @apply bg-pageText;
@@ -60,7 +60,7 @@
 
           input:checked + & {
             stroke-dashoffset: 0;
-            transition-delay: .15s;
+            transition-delay: 0.15s;
           }
         }
       }
@@ -79,9 +79,9 @@
     @apply hidden;
   }
 
-  input[type="text"],
-  input[type="email"],
-  input[type="number"],
+  input[type='text'],
+  input[type='email'],
+  input[type='number'],
   textarea {
     @apply relative appearance-none bg-transparent w-full p-4 rounded-none border border-solid border-pageText font-inherit text-base leading-none text-pageText;
 
@@ -94,7 +94,7 @@
     }
   }
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     @apply sr-only;
   }
 

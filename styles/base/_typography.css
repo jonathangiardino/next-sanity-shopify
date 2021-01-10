@@ -1,17 +1,16 @@
 @layer base {
   @font-face {
-    font-family: "GandurNew Light";
-    src: url("/fonts/GandurNew-Light.woff2") format("woff2"),
-        url("/fonts/GandurNew-Light.woff") format("woff");
+    font-family: 'GandurNew Light';
+    src: url('/fonts/GandurNew-Light.woff2') format('woff2'),
+      url('/fonts/GandurNew-Light.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Satan";
-    src: url("/fonts/satan.woff2") format("woff2"),
-        url("/fonts/satan.woff") format("woff");
+    font-family: 'Monument Extended Regular';
+    src: url('/fonts/MonumentExtended-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -25,7 +24,7 @@
   }
 
   body {
-    @apply bg-pageBG text-pageText font-mono leading-none;
+    @apply bg-pageBG text-white font-mono leading-none;
     font-size: 14px;
 
     @media (--md) {
@@ -84,7 +83,7 @@
   hr {
     @apply my-16 mx-0 border-0 h-px bg-pageText;
   }
-  
+
   ::-moz-selection {
     background: var(--pageText);
     color: var(--pageBG);
@@ -105,7 +104,7 @@ details {
   &:focus {
     outline: 1px dashed var(--pageText);
     outline-offset: 2px;
-    
+
     body:not(.is-tabbing) & {
       outline: none;
     }
@@ -131,12 +130,12 @@ ul {
     &:not(:last-child) {
       @apply mb-6;
     }
-    
+
     li {
       @apply mb-1;
-      
+
       &::before {
-        content: "+";
+        content: '+';
         @apply inline-block relative -ml-4 w-4;
       }
     }

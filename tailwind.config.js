@@ -21,7 +21,7 @@ module.exports = {
     fontFamily: {
       inherit: 'inherit',
       serif: ['GandurNew Light', 'serif'],
-      sans: ['Satan', 'sans-serif'],
+      sans: ['Monument Extended Regular', 'sans-serif'],
       mono: ['Courier', 'monospace'],
     },
     screens: {

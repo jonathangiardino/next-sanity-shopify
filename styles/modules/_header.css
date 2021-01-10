@@ -1,6 +1,6 @@
 .header {
   @apply relative;
-  
+
   &--content {
     @apply flex flex-col items-center;
   }
@@ -10,10 +10,10 @@
   @apply flex;
 
   &--link {
-    @apply block mx-auto;
+    @apply block mx-auto w-60;
 
     svg {
-      @apply block w-auto h-full fill-current;
+      @apply block h-full fill-current w-full;
     }
   }
 }
@@ -31,7 +31,7 @@
     &::before,
     &::after {
       @apply block absolute top-1/2 inset-x-0 bg-current;
-      content: "";
+      content: '';
       height: 2px;
       margin-top: -1px;
     }
@@ -45,7 +45,7 @@
 .main-navigation,
 .footer-navigation {
   @apply flex-1;
-  
+
   > ul {
     @apply flex flex-col;
 
@@ -56,7 +56,10 @@
     li {
       &.is-active {
         a {
-          /* active state styles */
+        }
+        a:not(.btn) {
+          background-color: transparent;
+          color: var(--pageText);
         }
       }
 
@@ -68,7 +71,7 @@
   }
 }
 
-a[href="#content"].skip-link {
+a[href='#content'].skip-link {
   @apply block fixed top-0 left-0 z-10 transition-transform;
   transform: translateY(-150%);
 
