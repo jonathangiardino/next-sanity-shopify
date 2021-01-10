@@ -47,13 +47,19 @@
   @apply flex-1;
 
   > ul {
-    @apply flex flex-col;
-
-    @media (--md) {
-      @apply flex-row;
+    @apply flex flex-nowrap justify-between overflow-x-auto p-5;
+    @media (--sm) {
+      @apply justify-center;
     }
 
     li {
+      @apply text-2xl;
+      flex: 0 0 auto;
+
+      a:not(.btn) {
+        @apply capitalize;
+      }
+
       &.is-active {
         a {
         }

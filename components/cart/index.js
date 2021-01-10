@@ -70,7 +70,7 @@ const CartItems = ({ items }) => {
 
 const EmptyCart = () => (
   <div className="cart--empty">
-    <p>Don't you need some of this?</p>
+    <p>Sad empty cart, shall we make some shopping?</p>
   </div>
 )
 

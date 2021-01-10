@@ -52,27 +52,19 @@ const Header = ({ menu, transparent }) => {
                 {cartCount}
               </span>
             </button>
+          </div>
 
-            <CursorFollow
-              cursorContent={
-                <span>
-                  <Icon name="Cursor" viewBox="0 0 27 27" />
-                </span>
-              }
-            >
-              <nav className="main-navigation" role="navigation">
-                <button
+          <nav className="main-navigation" role="navigation">
+            {/* <button
                   onClick={() => toggleMenu(!isMenuOpen)}
                   className={`menu-toggle${isMenuOpen ? ' is-open' : ''}`}
                   aria-expanded={isMenuOpen ? 'true' : 'false'}
                   aria-label="Toggle Menu"
                 >
                   <span></span>
-                </button>
-                {menu.items && <Navigation menu={menu} />}
-              </nav>
-            </CursorFollow>
-          </div>
+                </button> */}
+            {menu.items && <Navigation menu={menu} />}
+          </nav>
         </div>
       </header>
     </>

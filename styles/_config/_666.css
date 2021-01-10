@@ -429,7 +429,7 @@ a[href='#content'].skip-link,
   }
 
   &--title {
-    @apply mt-0;
+    @apply mt-0 font-sans;
   }
 
   &--subtitle {
@@ -562,7 +562,7 @@ a[href='#content'].skip-link,
 /* ----- Cart ----- */
 
 .cart-toggle {
-  @apply mt-4 mb-8 absolute top-3 right-6;
+  @apply mt-4 mb-8 absolute top-2 right-6;
 
   span {
     @apply hidden justify-center items-center absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 bg-pageText text-pageBG w-5 h-5 font-mono font-semibold rounded-full text-xs;
@@ -582,6 +582,9 @@ a[href='#content'].skip-link,
 
   &--subtotal {
     @apply flex justify-between mb-4 font-sans uppercase;
+  }
+  &--empty {
+    @apply font-sans;
   }
 }
 
