@@ -235,7 +235,7 @@ a[href='#content'].skip-link,
       }
 
       figure {
-        @apply border border-solid border-current p-8 lg:p-12;
+        @apply p-8 lg:p-12;
       }
     }
   }
@@ -268,7 +268,7 @@ a[href='#content'].skip-link,
   &--thumbs {
     button {
       &::after {
-        mix-blend-mode: difference;
+        mix-blend-mode: multiply;
       }
     }
   }
@@ -360,7 +360,6 @@ a[href='#content'].skip-link,
 /* ----- Collections ----- */
 
 .product-item {
-  @apply border border-current;
   margin: -0.5px;
 
   &--visuals {
@@ -399,33 +398,32 @@ a[href='#content'].skip-link,
 /* ----- Products ----- */
 
 .product {
-  @apply max-w-2xl mx-auto md:px-4;
+  @apply max-w-2xl mx-auto;
 
   &.has-gallery {
-    @apply max-w-7xl;
+    @apply max-w-full;
   }
 
   &--inner {
-    @apply md:border-l md:border-r md:border-current;
-
+    @apply relative;
     .has-gallery & {
       @media (--md) {
         @apply grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 55% 45%;
       }
     }
   }
 
   &--gallery {
-    @apply relative p-4 border-b border-current md:border-b-0 md:border-r;
+    @apply relative p-4;
   }
 
   &--content {
-    @apply flex flex-col;
+    @apply flex flex-col sticky top-0;
+    height: fit-content;
   }
 
   &--header {
-    @apply flex-1 text-center;
   }
 
   &--title {
@@ -445,15 +443,16 @@ a[href='#content'].skip-link,
   }
 
   &--options {
-    @apply border-b border-current;
   }
 
   &--actions {
-    @apply flex relative p-8;
-    @mixin textured;
+    @apply flex flex-col relative p-8;
+    @media (--md) {
+      @apply mr-auto w-3/4;
+    }
 
     .counter {
-      @apply mr-8 bg-pageBG;
+      @apply mb-8 bg-pageBG flex justify-start;
     }
 
     .btn {
@@ -462,12 +461,15 @@ a[href='#content'].skip-link,
   }
 
   &--stock-indicator {
-    @apply flex flex-col justify-center absolute top-1/2 left-0 -ml-6 -mt-6 w-12 h-12 rounded-full z-10 uppercase font-semibold text-center bg-pageText text-pageBG;
+    @apply flex flex-col justify-center ml-8 w-12 h-12 rounded-full z-10 uppercase font-semibold text-center bg-pageText text-pageBG;
     font-size: 0.625rem;
     animation: spin 6s linear infinite;
+    @media (--md) {
+      @apply absolute -left-8 ml-0;
+    }
 
     span {
-      @apply block -mt-2 leading-none;
+      @apply block -mt-1 leading-none;
       word-spacing: 3rem;
     }
   }
@@ -510,7 +512,7 @@ a[href='#content'].skip-link,
 }
 
 .price {
-  @apply flex items-center justify-center mb-4 font-sans text-3xl;
+  @apply flex items-center justify-start mb-4 font-sans text-3xl;
 
   .product-item & {
     @apply m-0 font-mono font-semibold text-base leading-normal;
@@ -627,7 +629,7 @@ a[href='#content'].skip-link,
     }
 
     input {
-      @apply p-1;
+      @apply p-2;
     }
   }
 }
@@ -653,6 +655,9 @@ a[href='#content'].skip-link,
   > ul {
     > li {
       @apply mx-2;
+      > a:not(.btn) {
+        @apply uppercase;
+      }
     }
   }
 

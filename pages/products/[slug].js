@@ -102,7 +102,7 @@ const Product = ({ data, error }) => {
     >
       <section className="section">
         <div className={`product${product.photos.main ? ' has-gallery' : ''}`}>
-          <Marquee line={product.inStock ? 'For Sale /' : 'Sold Out /'} />
+          {!product.inStock && <Marquee line={'Sold Out'} />}
 
           <div className="product--inner">
             {product.photos.main && (
@@ -116,8 +116,13 @@ const Product = ({ data, error }) => {
             )}
 
             <div className="product--content">
+              {activeVariant.lowStock && (
+                <div className="product--stock-indicator">
+                  <span>Low Stock</span>
+                </div>
+              )}
               <div className="product--header">
-                <h1 className="product--title">{product.title}</h1>
+                <h2 className="product--title">{product.title}</h2>
                 <ProductPrice
                   price={activeVariant ? activeVariant.price : product.price}
                   comparePrice={
@@ -161,10 +166,7 @@ const Product = ({ data, error }) => {
             </div>
           </div>
 
-          <Marquee
-            line={product.inStock ? 'For Sale /' : 'Sold Out /'}
-            reverse
-          />
+          {!product.inStock && <Marquee line={'Sold Out'} reverse />}
         </div>
       </section>
     </Layout>
@@ -181,11 +183,6 @@ const ProductActions = ({
     <div className="product--actions">
       {activeVariant?.inStock ? (
         <>
-          {activeVariant.lowStock && (
-            <div className="product--stock-indicator">
-              <span>Low Stock</span>
-            </div>
-          )}
           <Counter max={10} onUpdate={setQuantity} />
           <AddToCart
             productID={activeVariant.id}

@@ -10,7 +10,7 @@ body {
 }
 
 .section {
-  @apply relative py-16;
+  @apply relative py-8;
 
   &.is-error {
     @apply min-h-screen flex flex-col items-center justify-center text-center;

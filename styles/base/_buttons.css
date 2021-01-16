@@ -2,7 +2,7 @@
   @apply clean-btn leading-none;
 
   &.is-block {
-    @apply block w-full;
+    @apply block w-full py-4;
   }
 
   &.is-loading {
